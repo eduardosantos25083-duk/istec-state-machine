@@ -12,9 +12,13 @@ func tick() -> void:
 func branch() -> BaseState:
 	var within_attack: bool = knight.cursor_within_attack_range()
 	var within_vision: bool = knight.cursor_within_vision_range()
+	var within_roll: bool = knight.cursor_within_roll_range()
+
 	if within_attack:
 		return AttackState.new(knight)
 	elif within_vision:
 		return ChaseState.new(knight)
+	elif within_roll:
+		return RollState.new(knight)
 	else:
 		return null

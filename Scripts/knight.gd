@@ -1,7 +1,7 @@
 class_name Knight extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@export var roll_range: float = 64.0
 @export var vision_range: float = 32.0
 @export var attack_range: float = 16.0
 @export var speed: float = 8.0
@@ -28,7 +28,10 @@ func cursor_within_vision_range() -> bool:
 func cursor_within_attack_range() -> bool:
 	return direction_to_cursor.length() < attack_range
 
+func cursor_within_roll_range() -> bool:
+	return direction_to_cursor.length() < roll_range
+
 func _draw() -> void:
 	draw_arc(Vector2.ZERO, vision_range, 0, TAU, 64, Color.BLUE, 0.5)
 	draw_arc(Vector2.ZERO, attack_range, 0, TAU, 64, Color.RED, 0.5)
-	draw_arc(Vector2.ZERO, attack_range, 0, TAU, 64, Color.GREEN, 0.5)
+	draw_arc(Vector2.ZERO, roll_range, 0, TAU, 64, Color.GREEN, 0.5)

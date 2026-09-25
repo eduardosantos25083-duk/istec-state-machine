@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tpjvlem864w"
-path="res://.godot/imported/knight_attack.png-0fded031a172385b03d9223188d7ce01.ctex"
+uid="uid://dky0rol4eqxvk"
+path="res://.godot/imported/pirata_spritesheet_cutout.png-a88cd6686935f4dbc2a43530149d3baa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/knight_attack.png"
-dest_files=["res://.godot/imported/knight_attack.png-0fded031a172385b03d9223188d7ce01.ctex"]
+source_file="res://Sprites/pirata_spritesheet_cutout.png"
+dest_files=["res://.godot/imported/pirata_spritesheet_cutout.png-a88cd6686935f4dbc2a43530149d3baa.ctex"]
 
 [params]
 
