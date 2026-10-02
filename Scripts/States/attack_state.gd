@@ -1,6 +1,7 @@
 class_name AttackState extends BaseState
 
 func enter() -> void:
+	print("attack")
 	knight.animated_sprite.play("attack")
 
 func exit() -> void:
@@ -10,14 +11,14 @@ func tick() -> void:
 	pass
 
 func branch() -> BaseState:
-	var within_vision: bool = knight.cursor_within_vision_range()
-	var within_attack: bool = knight.cursor_within_attack_range()
-	var within_roll: bool = knight.cursor_within_attack_range()
-	if not within_vision:
-		return IdleState.new(knight)
-	elif not within_attack:
-		return ChaseState.new(knight)
-	elif not within_roll:
-		return ChaseState.new(knight)
-	else:
-		return null
+	var distance: float = knight.direction_to_cursor.length()
+
+	if distance >= knight.attack_range:
+		if distance < knight.vision_range:
+			return ChaseState.new(knight)
+		elif distance < knight.roll_range:
+			return RollState.new(knight)
+		else:
+			return IdleState.new(knight)
+
+	return null

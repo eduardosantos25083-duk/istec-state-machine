@@ -1,6 +1,7 @@
 class_name IdleState extends BaseState
 
 func enter() -> void:
+	print("idle")
 	knight.animated_sprite.play("idle")
 
 func exit() -> void:
@@ -10,15 +11,13 @@ func tick() -> void:
 	pass
 
 func branch() -> BaseState:
-	var within_attack: bool = knight.cursor_within_attack_range()
-	var within_vision: bool = knight.cursor_within_vision_range()
-	var within_roll: bool = knight.cursor_within_roll_range()
+	var distance: float = knight.direction_to_cursor.length()
 
-	if within_attack:
+	if distance < knight.attack_range:
 		return AttackState.new(knight)
-	elif within_vision:
+	elif distance < knight.vision_range:
 		return ChaseState.new(knight)
-	elif within_roll:
+	elif distance < knight.roll_range:
 		return RollState.new(knight)
-	else:
-		return null
+
+	return null

@@ -41,53 +41,21 @@ region = Rect2(960, 0, 320, 320)
 atlas = ExtResource("2_qxrlw")
 region = Rect2(1280, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rku1e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qyi"]
 atlas = ExtResource("2_qxrlw")
-region = Rect2(1280, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfjv2"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(0, 960, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1phco"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(320, 960, 320, 320)
+region = Rect2(1600, 960, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nb51f"]
 atlas = ExtResource("2_qxrlw")
 region = Rect2(640, 960, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nnt18"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1phco"]
 atlas = ExtResource("2_qxrlw")
-region = Rect2(960, 960, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewbju"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(1280, 960, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85qyi"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(1600, 960, 320, 320)
+region = Rect2(320, 960, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iivbl"]
 atlas = ExtResource("2_qxrlw")
 region = Rect2(0, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7nbq1"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(320, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_exi56"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(640, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t8sx"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(320, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mg4q0"]
-atlas = ExtResource("2_qxrlw")
-region = Rect2(960, 320, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vm72l"]
 atlas = ExtResource("2_qxrlw")
@@ -96,6 +64,14 @@ region = Rect2(1280, 320, 320, 320)
 [sub_resource type="AtlasTexture" id="AtlasTexture_22asu"]
 atlas = ExtResource("2_qxrlw")
 region = Rect2(1600, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbq1"]
+atlas = ExtResource("2_qxrlw")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg4q0"]
+atlas = ExtResource("2_qxrlw")
+region = Rect2(960, 320, 320, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_akk5q"]
 animations = [{
@@ -134,29 +110,17 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rku1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rfjv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1phco")
+"texture": SubResource("AtlasTexture_85qyi")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nb51f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nnt18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ewbju")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85qyi")
+"texture": SubResource("AtlasTexture_1phco")
 }],
 "loop": 1,
 "name": &"roll",
@@ -167,22 +131,16 @@ animations = [{
 "texture": SubResource("AtlasTexture_iivbl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7nbq1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_exi56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7t8sx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mg4q0")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_vm72l")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_22asu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg4q0")
 }],
 "loop": 1,
 "name": &"walk",
@@ -201,8 +159,8 @@ shape = SubResource("CircleShape2D_1oy50")
 texture_filter = 1
 scale = Vector2(0.06875, 0.06875)
 sprite_frames = SubResource("SpriteFrames_akk5q")
-animation = &"attack"
-frame_progress = 0.026879761
+animation = &"walk"
+frame_progress = 0.2304656
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=472079404]
 zoom = Vector2(3, 3)

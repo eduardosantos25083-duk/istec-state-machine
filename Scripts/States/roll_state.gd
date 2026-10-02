@@ -1,24 +1,23 @@
 class_name RollState extends BaseState
 
 func enter() -> void:
+	print("roll")
 	knight.animated_sprite.play("roll")
 
 func exit() -> void:
 	pass
 
 func tick() -> void:
-	pass
+	knight.velocity = knight.direction_to_cursor.normalized() * knight.speed
+	knight.move_and_slide()
 
 func branch() -> BaseState:
-	var within_vision: bool = knight.cursor_within_vision_range()
-	var within_roll: bool = knight.cursor_within_roll_range()
-	var within_attack: bool = knight.cursor_within_attack_range()
+	var distance: float = knight.direction_to_cursor.length()
 
-	if not within_vision:
-		return IdleState.new(knight)
-	elif not within_roll:
-		return RollState.new(knight)
-	elif not within_attack:
+	if distance < knight.attack_range:
+		return AttackState.new(knight)
+	elif distance < knight.vision_range:
 		return ChaseState.new(knight)
-	else:
-		return null
+	elif distance >= knight.roll_range:
+		return IdleState.new(knight)
+	return null
