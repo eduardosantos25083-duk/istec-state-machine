@@ -8,8 +8,9 @@ func exit() -> void:
 	pass
 
 func tick() -> void:
-	knight.velocity = knight.direction_to_cursor.normalized() * knight.speed
+	knight.velocity = knight.direction_to_cursor.normalized() * knight.speed*8
 	knight.move_and_slide()
+	
 
 func branch() -> BaseState:
 	var distance: float = knight.direction_to_cursor.length()

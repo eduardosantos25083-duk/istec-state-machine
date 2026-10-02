@@ -18,6 +18,14 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	state_machine.tick()
 
+	var mouse_pos = get_global_mouse_position()
+	
+	if mouse_pos.x > global_position.x:
+		$AnimatedSprite2D.flip_h = false
+	elif  mouse_pos.x < global_position.x:
+		$AnimatedSprite2D.flip_h = true
+		
+		
 func read_cursor_position() -> void:
 	var cursor_position: Vector2 = get_global_mouse_position()
 	direction_to_cursor = cursor_position - global_position
